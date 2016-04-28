@@ -14,6 +14,18 @@
                 <table class='table'>
                     <tbody>
                         <tr>
+                            <td>Node.js</td>
+                            <td id='node-version'></td>
+                        </tr>
+                        <tr>
+                            <td>Chromium</td>
+                            <td id='chromium-version'></td>
+                        </tr>
+                        <tr>
+                            <td>Electron</td>
+                            <td id='electron-version'></td>
+                        </tr>
+                        <tr>
                             <td>jQuery</td>
                             <td id='jquery-version'></td>
                         </tr>
@@ -32,12 +44,24 @@
         <!-- <script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script> -->
 
         <script>
-            var fs = require('fs');
-            var path = require('path');
-
             $(document).ready(function() {
+                // node modules
+                var fs = require('fs');
+                var path = require('path');
+
+                // Node.js version
+                $('#node-version').text(process.versions.node);
+
+                // Chromium version
+                $('#chromium-version').text(process.versions.chrome);
+
+                // Electron version
+                $('#electron-version').text(process.versions.electron);
+
+                // jQuery version
                 $('#jquery-version').text(jQuery.fn.jquery);
-                console.log(__dirname);
+
+                // Bootstrap version
                 var BOOTSTRAP_PATH = path.join(__dirname, '../node_modules/bootstrap/dist/css/bootstrap.min.css');
                 fs.readFile(BOOTSTRAP_PATH, 'utf8', function(err, data) {
                     if (err) return console.error(err);
