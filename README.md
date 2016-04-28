@@ -8,6 +8,12 @@ A template for building [Electron](https://github.com/electron/electron) apps wi
 $ npm install
 ```
 
+## Start
+
+```sh
+$ npm start
+```
+
 ## License
 
 MIT
