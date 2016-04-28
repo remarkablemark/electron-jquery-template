@@ -22,6 +22,10 @@ function createWindow() {
         height: 600
     });
 
+    mainWindow.loadURL(
+        path.join('file://', __dirname, '/app/index.html')
+    );
+
     mainWindow.on('closed', function() {
         mainWindow = null;
     });
