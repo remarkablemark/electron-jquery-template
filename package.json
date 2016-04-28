@@ -1,0 +1,15 @@
+{
+  "name": "electron-jquery-template",
+  "version": "0.0.1",
+  "description": "A template for building Electron apps with jQuery.",
+  "author": "Mark <mark@remarkablemark.org>",
+  "keywords": [
+    "electron",
+    "jquery",
+    "template"
+  ],
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.2"
+  },
+  "license": "MIT"
+}
