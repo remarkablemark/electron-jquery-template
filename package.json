@@ -17,5 +17,8 @@
     "electron-prebuilt": "^0.37.2",
     "electron-reload": "^0.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
 }
