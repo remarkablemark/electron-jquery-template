@@ -14,7 +14,8 @@
   ],
   "devDependencies": {
     "electron-debug": "^0.7.0",
-    "electron-prebuilt": "^0.37.2"
+    "electron-prebuilt": "^0.37.2",
+    "electron-reload": "^0.3.0"
   },
   "license": "MIT"
 }

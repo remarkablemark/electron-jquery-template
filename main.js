@@ -11,6 +11,9 @@ require('electron-debug')({
     //showDevTools: true
 });
 
+// livereload
+require('electron-reload')(__dirname);
+
 var mainWindow;
 
 /**
