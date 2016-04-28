@@ -3,24 +3,48 @@
     <head>
         <meta charset='utf-8'>
         <title>electron-jquery-template</title>
+        <!-- Bootstrap -->
+        <link rel='stylesheet' href='../node_modules/bootstrap/dist/css/bootstrap.min.css'>
     </head>
     <body>
-        <h1>electron-jquery-template</h1>
+        <div class='container'>
+            <div class='row'>
+                <h1>electron-jquery-template</h1>
 
-        <table>
-            <tbody>
-                <tr>
-                    <td>jQuery:</td>
-                    <td id='jquery-version'></td>
-                </tr>
-            </tbody>
-        </table>
+                <table class='table'>
+                    <tbody>
+                        <tr>
+                            <td>jQuery</td>
+                            <td id='jquery-version'></td>
+                        </tr>
+                        <tr>
+                            <td>Bootstrap</td>
+                            <td id='bootstrap-version'></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
 
         <!-- jQuery -->
         <script src='../node_modules/jquery/dist/jquery.min.js' onload='window.$ = window.jQuery = module.exports;'></script>
+        <!-- Bootstrap -->
+        <!-- <script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script> -->
+
         <script>
+            var fs = require('fs');
+            var path = require('path');
+
             $(document).ready(function() {
                 $('#jquery-version').text(jQuery.fn.jquery);
+                console.log(__dirname);
+                var BOOTSTRAP_PATH = path.join(__dirname, '../node_modules/bootstrap/dist/css/bootstrap.min.css');
+                fs.readFile(BOOTSTRAP_PATH, 'utf8', function(err, data) {
+                    if (err) return console.error(err);
+
+                    var version = data.match(/Bootstrap v(.+) /)[1];
+                    $('#bootstrap-version').text(version);
+                });
             });
         </script>
     </body>
